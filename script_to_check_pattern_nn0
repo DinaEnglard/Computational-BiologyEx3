@@ -1,0 +1,31 @@
+def find_pattern(file_path):
+    pattern_found = True
+
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+        for line in lines:
+            string, class_val = line.strip().split()
+            count_1 = string.count('1')
+
+            if 8 <= count_1 <= 12:
+                if class_val != '1':
+                    pattern_found = False
+                    break
+            else:
+                if class_val != '0':
+                    pattern_found = False
+                    break
+
+    return pattern_found
+
+
+# Usage
+file_path = 'nn0.txt'
+pattern_exists = find_pattern(file_path)
+
+if pattern_exists:
+    print(
+        "The pattern suggests that if the count of '1' in the string is between 8 and 12 (inclusive), it tends to have class 1. Otherwise, it tends to have class 0.")
+else:
+    print("No clear pattern found based on the given data.")
