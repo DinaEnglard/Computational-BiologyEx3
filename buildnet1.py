@@ -3,9 +3,9 @@ import numpy as np
 from sklearn.metrics import roc_auc_score
 
 # Constants
-POPULATION_SIZE = 30
+POPULATION_SIZE = 100
 NUM_GENERATIONS = 100
-MUTATION_RATE = 0.75
+MUTATION_RATE = 0.1
 CROSSOVER_RATE = 1
 INPUT_SIZE = 16
 OUTPUT_SIZE = 1
@@ -24,7 +24,7 @@ with open('nn1.txt', 'r') as file:
 # Split data into training and test sets
 random.shuffle(data)
 train_size = int(0.8 * len(data))
-train_data = data[:train_size//16]
+train_data = data[:train_size]
 test_data = data[train_size:]
 
 
@@ -298,6 +298,7 @@ def evolve(population, train_data):
 
 
 # Main loop
+
 population = initialize_population(POPULATION_SIZE, INPUT_SIZE, OUTPUT_SIZE)
 
 for generation in range(NUM_GENERATIONS):
