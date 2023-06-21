@@ -1,6 +1,6 @@
 # Computational-BiologyEx3
 
-This exercise has been writen by Roi Avraham and Dina Englerd.
+This exercise has been writen by Roi Avraham and Dina Englard.
 # Description
 For this assignment we build neural networks with the help of a genetic algorithm that will 
 learn the patterns and be able to predict whether a certain string matches the pattern. 
